@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="logoCab" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.75"/>
+    </linearGradient>
+    <linearGradient id="logoFin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffe066"/>
+      <stop offset="100%" stop-color="#ffb800"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="5" width="24" height="22" rx="2" stroke="currentColor" stroke-width="1.6"/>
+  <rect x="6" y="7" width="20" height="4.5" rx="0.8" stroke="currentColor" stroke-width="0.9"/>
+  <rect x="7.5" y="8.3" width="9" height="2" rx="0.3" fill="currentColor" opacity="0.25"/>
+  <rect x="8.2" y="8.8" width="1" height="0.9" fill="url(#logoFin)"/>
+  <rect x="9.6" y="8.8" width="1" height="0.9" fill="url(#logoFin)"/>
+  <rect x="11" y="8.8" width="1" height="0.9" fill="url(#logoFin)" opacity="0.55"/>
+  <circle cx="21.5" cy="9.2" r="0.65" fill="#7dffaa"/>
+  <circle cx="23.2" cy="9.2" r="0.65" fill="url(#logoFin)"/>
+  <g fill="url(#logoFin)">
+    <rect x="7.2" y="13.5" width="1.5" height="8.5" rx="0.25"/>
+    <rect x="9.5" y="13.5" width="1.5" height="8.5" rx="0.25"/>
+    <rect x="11.8" y="13.5" width="1.5" height="8.5" rx="0.25"/>
+    <rect x="14.1" y="13.5" width="1.5" height="8.5" rx="0.25"/>
+    <rect x="16.4" y="13.5" width="1.5" height="8.5" rx="0.25"/>
+    <rect x="18.7" y="13.5" width="1.5" height="8.5" rx="0.25"/>
+    <rect x="21" y="13.5" width="1.5" height="8.5" rx="0.25"/>
+  </g>
+  <line x1="7" y1="23.2" x2="25" y2="23.2" stroke="currentColor" stroke-width="0.7" stroke-linecap="round"/>
+  <line x1="7" y1="24.3" x2="25" y2="24.3" stroke="currentColor" stroke-width="0.7" stroke-linecap="round"/>
+  <circle cx="9" cy="26.2" r="0.9" stroke="currentColor" stroke-width="0.8"/>
+  <circle cx="23" cy="26.2" r="0.9" stroke="currentColor" stroke-width="0.8"/>
+</svg>

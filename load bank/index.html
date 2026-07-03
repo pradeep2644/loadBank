@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Load Bank Providers | Load Power Solutions</title>
+  <meta name="description" content="Load Bank Providers — AC/DC resistive load banks, inductive load banks, and generator testing systems across India.">
+  <meta name="theme-color" content="#004b87">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true">
+    <div class="page-bg-base"></div>
+    <div class="page-bg-power-grid"></div>
+
+    <!-- AC power sine waves -->
+    <div class="page-bg-waves">
+      <svg class="wave-layer wave-layer--1" viewBox="0 0 800 80" preserveAspectRatio="none">
+        <path d="M0,40 C50,10 100,70 150,40 S250,10 300,40 S400,70 450,40 S550,10 600,40 S700,70 800,40 L800,80 L0,80 Z" fill="rgba(0,102,179,0.12)"/>
+        <path d="M0,40 C50,10 100,70 150,40 S250,10 300,40 S400,70 450,40 S550,10 600,40 S700,70 800,40" fill="none" stroke="rgba(0,102,179,0.35)" stroke-width="2"/>
+      </svg>
+      <svg class="wave-layer wave-layer--2" viewBox="0 0 800 80" preserveAspectRatio="none">
+        <path d="M0,40 C50,70 100,10 150,40 S250,70 300,40 S400,10 450,40 S550,70 600,40 S700,10 800,40" fill="none" stroke="rgba(0,133,124,0.3)" stroke-width="1.5"/>
+      </svg>
+      <svg class="wave-layer wave-layer--3" viewBox="0 0 800 80" preserveAspectRatio="none">
+        <path d="M0,40 C50,10 100,70 150,40 S250,10 300,40 S400,70 450,40 S550,10 600,40 S700,70 800,40" fill="none" stroke="rgba(255,180,0,0.2)" stroke-width="1"/>
+      </svg>
+    </div>
+
+    <!-- Electrical circuit paths -->
+    <svg class="page-bg-circuit" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+      <path class="circuit-path" d="M0,180 H400 V320 H800 V480 H1200 V640 H1440"/>
+      <path class="circuit-path" d="M0,420 H300 V560 H700 V720 H1440"/>
+      <path class="circuit-path circuit-path--thin" d="M200,0 V900 M600,0 V900 M1000,0 V900"/>
+      <circle class="power-node" cx="400" cy="180" r="5"/>
+      <circle class="power-node" cx="800" cy="320" r="5"/>
+      <circle class="power-node" cx="1200" cy="480" r="5"/>
+      <circle class="power-node" cx="300" cy="420" r="4"/>
+      <circle class="power-node" cx="700" cy="560" r="4"/>
+      <circle class="power-node" cx="600" cy="300" r="4"/>
+    </svg>
+
+    <!-- Power pulses traveling on lines -->
+    <div class="page-bg-pulses">
+      <span class="power-pulse power-pulse--1"></span>
+      <span class="power-pulse power-pulse--2"></span>
+      <span class="power-pulse power-pulse--3"></span>
+    </div>
+
+    <!-- Load bank meter bars -->
+    <div class="page-bg-meters">
+      <div class="meter-block">
+        <span class="meter-label">kW</span>
+        <div class="meter-bars">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <div class="meter-block meter-block--2">
+        <span class="meter-label">LOAD</span>
+        <div class="meter-bars">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Utility Bar -->
+  <div class="utility-bar">
+    <div class="container utility-inner">
+      <span>Pune, Maharashtra, India</span>
+      <div class="utility-links">
+        <a href="tel:+919604096638">+91-9604096638</a>
+        <a href="mailto:pradeep.shinde2644@gmail.com">pradeep.shinde2644@gmail.com</a>
+        <a href="#" class="utility-wa" onclick="event.preventDefault(); openWhatsApp()">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-row">
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <rect x="4" y="5" width="24" height="22" rx="2" stroke="currentColor" stroke-width="1.6"/>
+            <rect x="6" y="7" width="20" height="4.5" rx="0.8" stroke="currentColor" stroke-width="0.9"/>
+            <rect x="7.5" y="8.3" width="9" height="2" rx="0.3" fill="currentColor" opacity="0.25"/>
+            <rect x="8.2" y="8.8" width="1" height="0.9" fill="#ffb800"/>
+            <rect x="9.6" y="8.8" width="1" height="0.9" fill="#ffb800"/>
+            <rect x="11" y="8.8" width="1" height="0.9" fill="#ffb800" opacity="0.55"/>
+            <circle cx="21.5" cy="9.2" r="0.65" fill="#7dffaa"/>
+            <circle cx="23.2" cy="9.2" r="0.65" fill="#ffb800"/>
+            <rect x="7.2" y="13.5" width="1.5" height="8.5" rx="0.25" fill="#ffb800"/>
+            <rect x="9.5" y="13.5" width="1.5" height="8.5" rx="0.25" fill="#ffb800"/>
+            <rect x="11.8" y="13.5" width="1.5" height="8.5" rx="0.25" fill="#ffb800"/>
+            <rect x="14.1" y="13.5" width="1.5" height="8.5" rx="0.25" fill="#ffb800"/>
+            <rect x="16.4" y="13.5" width="1.5" height="8.5" rx="0.25" fill="#ffb800"/>
+            <rect x="18.7" y="13.5" width="1.5" height="8.5" rx="0.25" fill="#ffb800"/>
+            <rect x="21" y="13.5" width="1.5" height="8.5" rx="0.25" fill="#ffb800"/>
+            <line x1="7" y1="23.2" x2="25" y2="23.2" stroke="currentColor" stroke-width="0.7" stroke-linecap="round"/>
+            <line x1="7" y1="24.3" x2="25" y2="24.3" stroke="currentColor" stroke-width="0.7" stroke-linecap="round"/>
+            <circle cx="9" cy="26.2" r="0.9" stroke="currentColor" stroke-width="0.8"/>
+            <circle cx="23" cy="26.2" r="0.9" stroke="currentColor" stroke-width="0.8"/>
+          </svg>
+        </div>
+        <div>
+          <strong>Load Bank Providers</strong>
+          <span>Load Power Solutions</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#" class="nav-link active" data-section="home">Home</a>
+        <a href="#products-services" class="nav-link" data-section="products-services">Products</a>
+        <a href="#about" class="nav-link" data-section="about">About Us</a>
+        <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+      </nav>
+
+      <div class="header-cta">
+        <button class="btn btn-outline btn-sm" id="searchToggle" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <a href="#contact" class="btn btn-primary btn-sm">Request Quote</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="search-panel" id="searchPanel">
+      <div class="container">
+        <input type="search" id="productSearch" placeholder="Search products, applications, specifications..." autocomplete="off">
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow">Trusted Industrial Partner · Made in India</p>
+        <h1>Load Power Solutions for Industrial Testing</h1>
+        <p class="lead">Load Bank Providers delivers AC and DC resistive load banks, inductive load banks, and generator testing systems for power validation, battery testing, UPS commissioning, and industrial applications across India.</p>
+        <div class="hero-btns">
+          <a href="#products-services" class="btn btn-primary">Explore Products</a>
+          <a href="#contact" class="btn btn-outline">Contact Sales</a>
+          <button type="button" class="btn btn-whatsapp" onclick="openWhatsApp()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            Chat on WhatsApp
+          </button>
+        </div>
+        <div class="trust-row">
+          <div><strong>6</strong><span>Load Bank Products</span></div>
+          <div><strong>100 kW</strong><span>Max Capacity</span></div>
+          <div><strong>82%</strong><span>Response Rate</span></div>
+          <div><strong>1 Year</strong><span>Warranty</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-showcase">
+          <div class="hero-showcase-ring"></div>
+          <div class="hero-showcase-glow"></div>
+          <div class="hero-carousel" id="heroCarousel" aria-live="polite">
+            <div class="hero-slide active" data-index="0">
+              <img src="images/ac-resistive-load-bank.png" alt="AC Resistive Load Bank">
+              <span class="hero-slide-label">AC Resistive Load Bank</span>
+            </div>
+            <div class="hero-slide" data-index="1">
+              <img src="images/dc-resistive-load-bank.png" alt="DC Resistive Load Bank">
+              <span class="hero-slide-label">DC Resistive Load Bank</span>
+            </div>
+            <div class="hero-slide" data-index="2">
+              <img src="images/battery-testing-load-bank.png" alt="Battery Testing Load Bank">
+              <span class="hero-slide-label">Battery Testing Load Bank</span>
+            </div>
+            <div class="hero-slide" data-index="3">
+              <img src="images/three-phase-ac-dc-load-bank.png" alt="Three Phase AC/DC Load Bank">
+              <span class="hero-slide-label">Three Phase AC/DC Load Bank</span>
+            </div>
+            <div class="hero-slide" data-index="4">
+              <img src="images/inductive-load-bank.png" alt="Inductive Load Bank">
+              <span class="hero-slide-label">Inductive Load Bank</span>
+            </div>
+            <div class="hero-slide" data-index="5">
+              <img src="images/generator-load-bank.png" alt="Generator Load Bank">
+              <span class="hero-slide-label">Generator Load Bank</span>
+            </div>
+          </div>
+          <div class="hero-carousel-dots" id="heroCarouselDots"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Strip -->
+  <section class="trust-strip">
+    <div class="container trust-grid">
+      <div class="trust-item reveal">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div><strong>Quality Assured</strong><span>ISO-compliant manufacturing</span></div>
+      </div>
+      <div class="trust-item reveal">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div><strong>Fast Delivery</strong><span>Pan-India shipping</span></div>
+      </div>
+      <div class="trust-item reveal">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div><strong>Expert Support</strong><span>Technical consultation</span></div>
+      </div>
+      <div class="trust-item reveal">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+        <div><strong>Custom Specs</strong><span>Tailored to your needs</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products & Services -->
+  <section class="catalog" id="products-services">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="eyebrow">Products</p>
+        <h2>Load Power Solutions</h2>
+        <p>AC and DC load banks for generator testing, battery validation, UPS commissioning, and industrial power system testing.</p>
+      </div>
+
+      <div class="catalog-layout catalog-single">
+        <div class="catalog-content" id="catalogContent">
+          <div class="breadcrumb" id="breadcrumb">
+            <a href="#products-services">Products</a>
+            <span>/</span>
+            <span id="breadcrumbCurrent">Load Power Solutions</span>
+          </div>
+
+          <div class="category-panel" id="categoryPanel">
+            <div class="panel-header">
+              <h2 id="panelTitle">Load Power Solutions</h2>
+              <p id="panelDesc">Complete range of AC and DC resistive load banks, inductive load banks, and generator testing systems for industrial power validation.</p>
+            </div>
+
+            <div class="panel-meta">
+              <div class="meta-block">
+                <h4>Applications</h4>
+                <div class="tag-list" id="panelApplications"></div>
+              </div>
+              <div class="meta-block">
+                <h4>Product Line</h4>
+                <ul class="product-line" id="panelItems"></ul>
+              </div>
+            </div>
+
+            <div class="panel-products">
+              <div class="panel-products-head">
+                <h3>Available Products</h3>
+                <span class="count-badge"><span id="resultCount">6</span> items</span>
+              </div>
+              <div class="product-grid" id="productGrid">
+                <article class="product-card reveal" id="product-ac-resistive-load-bank" data-search="ac resistive load bank generator ups">
+                  <div class="product-img">
+                    <img src="images/ac-resistive-load-bank.png" alt="AC Resistive Load Bank" loading="lazy">
+                  </div>
+                  <div class="product-info">
+                    <span class="product-cat">Load Power Solutions</span>
+                    <h4>AC Resistive Load Bank</h4>
+                    <p>AC resistive load banks for generator, UPS, and power system performance testing.</p>
+                    <div class="product-footer">
+                      <span class="price">Request Quote</span>
+                      <button type="button" class="btn btn-primary btn-sm" onclick="openEnquiry('AC Resistive Load Bank')">Enquire</button>
+                    </div>
+                  </div>
+                </article>
+                <article class="product-card reveal" id="product-dc-resistive-load-bank" data-search="dc resistive load bank battery solar">
+                  <div class="product-img">
+                    <img src="images/dc-resistive-load-bank.png" alt="DC Resistive Load Bank" loading="lazy">
+                  </div>
+                  <div class="product-info">
+                    <span class="product-cat">Load Power Solutions</span>
+                    <h4>DC Resistive Load Bank</h4>
+                    <p>DC resistive load banks for battery systems, solar inverters, and DC power validation.</p>
+                    <div class="product-footer">
+                      <span class="price">Request Quote</span>
+                      <button type="button" class="btn btn-primary btn-sm" onclick="openEnquiry('DC Resistive Load Bank')">Enquire</button>
+                    </div>
+                  </div>
+                </article>
+                <article class="product-card reveal" id="product-battery-testing-load-bank" data-search="battery testing load bank discharge capacity">
+                  <div class="product-img">
+                    <img src="images/battery-testing-load-bank.png" alt="Battery Testing Load Bank" loading="lazy">
+                  </div>
+                  <div class="product-info">
+                    <span class="product-cat">Load Power Solutions</span>
+                    <h4>Battery Testing Load Bank</h4>
+                    <p>Precision load banks for battery capacity testing, discharge analysis, and UPS validation.</p>
+                    <div class="product-footer">
+                      <span class="price">Request Quote</span>
+                      <button type="button" class="btn btn-primary btn-sm" onclick="openEnquiry('Battery Testing Load Bank')">Enquire</button>
+                    </div>
+                  </div>
+                </article>
+                <article class="product-card reveal" id="product-three-phase-ac-dc-load-bank" data-search="three phase ac dc load bank">
+                  <div class="product-img">
+                    <img src="images/three-phase-ac-dc-load-bank.png" alt="Three Phase AC/DC Load Bank" loading="lazy">
+                  </div>
+                  <div class="product-info">
+                    <span class="product-cat">Load Power Solutions</span>
+                    <h4>Three Phase AC/DC Load Bank</h4>
+                    <p>Three phase AC/DC load banks for industrial power testing and commissioning applications.</p>
+                    <div class="product-footer">
+                      <span class="price">Request Quote</span>
+                      <button type="button" class="btn btn-primary btn-sm" onclick="openEnquiry('Three Phase AC/DC Load Bank')">Enquire</button>
+                    </div>
+                  </div>
+                </article>
+                <article class="product-card reveal" id="product-inductive-load-bank" data-search="inductive load bank power factor">
+                  <div class="product-img">
+                    <img src="images/inductive-load-bank.png" alt="Inductive Load Bank" loading="lazy">
+                  </div>
+                  <div class="product-info">
+                    <span class="product-cat">Load Power Solutions</span>
+                    <h4>Inductive Load Bank</h4>
+                    <p>Inductive load banks for power factor testing, motor load simulation, and reactive power validation.</p>
+                    <div class="product-footer">
+                      <span class="price">Request Quote</span>
+                      <button type="button" class="btn btn-primary btn-sm" onclick="openEnquiry('Inductive Load Bank')">Enquire</button>
+                    </div>
+                  </div>
+                </article>
+                <article class="product-card reveal" id="product-generator-load-bank" data-search="generator load bank testing commissioning">
+                  <div class="product-img">
+                    <img src="images/generator-load-bank.png" alt="Generator Load Bank" loading="lazy">
+                  </div>
+                  <div class="product-info">
+                    <span class="product-cat">Load Power Solutions</span>
+                    <h4>Generator Load Bank</h4>
+                    <p>Dedicated generator load banks for performance testing, commissioning, and maintenance validation.</p>
+                    <div class="product-footer">
+                      <span class="price">Request Quote</span>
+                      <button type="button" class="btn btn-primary btn-sm" onclick="openEnquiry('Generator Load Bank')">Enquire</button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="empty-state" id="emptyState" hidden>
+                <p>No products match your search.</p>
+                <button class="btn btn-outline btn-sm" onclick="openEnquiry('Load Power Solutions')">Request Custom Quote</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-text">
+        <p class="eyebrow">About Us</p>
+        <h2>Your Partner in Load Power Solutions</h2>
+        <p>Load Bank Providers is a Pune-based manufacturer and supplier of AC/DC resistive load banks, inductive load banks, and generator testing systems. We serve power plants, data centers, manufacturing facilities, and educational institutions across India.</p>
+        <ul class="about-list">
+          <li>Custom-engineered solutions for specific power ratings</li>
+          <li>End-to-end technical support and consultation</li>
+          <li>Competitive pricing with volume discounts</li>
+          <li>Made in India with quality assurance</li>
+        </ul>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card reveal"><strong>6</strong><span>Load Bank Products</span></div>
+        <div class="stat-card reveal"><strong>100 kW</strong><span>Max Power Rating</span></div>
+        <div class="stat-card reveal"><strong>1 Year</strong><span>Product Warranty</span></div>
+        <div class="stat-card reveal"><strong>Pan-India</strong><span>Delivery Network</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header center">
+        <p class="eyebrow">Contact Us</p>
+        <h2>Get in Touch with Our Team</h2>
+        <p>Request a quotation, technical consultation, or product specification sheet.</p>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-details">
+          <div class="detail-row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <strong>Head Office</strong>
+              <p>Ground Floor, SR. No. 53/1/1a/1, Shop No.4, Gurukrupa,<br>Dhayari Gaon, Pune - 411041, Maharashtra</p>
+            </div>
+          </div>
+          <div class="detail-row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <strong>Phone</strong>
+              <p><a href="tel:+919604096638">+91-9604096638</a></p>
+            </div>
+          </div>
+          <div class="detail-row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg>
+            <div>
+              <strong>Email</strong>
+              <p><a href="mailto:pradeep.shinde2644@gmail.com">pradeep.shinde2644@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="detail-row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            <div>
+              <strong>WhatsApp</strong>
+              <p><a href="#" onclick="event.preventDefault(); openWhatsApp()">+91-9604096638</a> — Instant chat support</p>
+            </div>
+          </div>
+          <button type="button" class="btn btn-whatsapp btn-full" onclick="openWhatsApp()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            Chat on WhatsApp
+          </button>
+        </div>
+        <form class="contact-form" id="contactForm" onsubmit="submitEnquiry(event)">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="field">
+              <label for="mobile">Phone Number *</label>
+              <input type="tel" id="mobile" name="mobile" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">Business Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="requirement">Requirement Details *</label>
+            <textarea id="requirement" name="requirement" rows="4" required placeholder="Product name, quantity, specifications..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Submit Enquiry</button>
+          <div class="form-divider"><span>or</span></div>
+          <button type="button" class="btn btn-whatsapp btn-full" onclick="openWhatsAppFromForm()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            Send via WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <strong>Load Bank Providers</strong>
+        <p>Industrial load banks and Load Power Solutions from Pune, India.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <a href="#products-services">AC Resistive Load Bank</a>
+        <a href="#products-services">DC Resistive Load Bank</a>
+        <a href="#products-services">Battery Testing Load Bank</a>
+        <a href="#products-services">Generator Load Bank</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+        <a href="#products-services">Product Catalog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Pune, Maharashtra 411041</p>
+        <p><a href="tel:+919604096638">+91-9604096638</a></p>
+        <p><a href="mailto:pradeep.shinde2644@gmail.com">pradeep.shinde2644@gmail.com</a></p>
+        <p><a href="#" onclick="event.preventDefault(); openWhatsApp()">WhatsApp Chat</a></p>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <div class="container">
+        <p>© 2026 Load Bank Providers. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Enquiry Modal -->
+  <div class="modal-backdrop" id="enquiryModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeEnquiry()" aria-label="Close">&times;</button>
+      <h3>Request a Quotation</h3>
+      <p class="modal-product" id="modalProduct"></p>
+      <form onsubmit="submitEnquiry(event)">
+        <div class="field">
+          <label>Full Name *</label>
+          <input type="text" name="name" required>
+        </div>
+        <div class="field">
+          <label>Phone Number *</label>
+          <input type="tel" name="mobile" required>
+        </div>
+        <div class="field">
+          <label>Email *</label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="field">
+          <label>Requirement *</label>
+          <textarea name="requirement" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Send Enquiry</button>
+        <button type="button" class="btn btn-whatsapp btn-full" style="margin-top:10px" onclick="openWhatsApp(document.getElementById('modalProduct').textContent)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          Chat on WhatsApp Instead
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">Your enquiry has been submitted successfully.</div>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="#" class="whatsapp-float" id="whatsappFloat" onclick="event.preventDefault(); openWhatsApp()" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+    <span class="wa-tooltip">Chat with us</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
