@@ -1,39 +1,48 @@
 const PRODUCT_LINE = {
   name: 'Load Power Solutions',
-  description: 'Complete range of AC and DC resistive load banks, inductive load banks, and generator testing systems for industrial power validation, battery testing, UPS commissioning, and data center applications.',
-  applications: ['Generator Testing', 'UPS Validation', 'Battery Capacity Test', 'Data Center Commissioning', 'Industrial Power Testing'],
+  description: 'AC resistive, DC resistive, three phase AC and inductive load banks for industrial power validation, battery and rectifier testing, UPS commissioning, and factory acceptance tests.',
+  applications: ['Generator Testing', 'UPS Validation', 'Battery & Rectifier Test', 'Transformer Testing', 'Factory Acceptance Test', 'Industrial Power Testing'],
   items: [
     'AC Resistive Load Bank',
     'DC Resistive Load Bank',
-    'Battery Testing Load Bank',
-    'Three Phase AC/DC Load Bank',
-    'Inductive Load Bank',
-    'Generator Load Bank'
+    'Three Phase AC Load Bank',
+    'Inductive Load Bank'
   ]
 };
 
-const WHATSAPP_NUMBER = '919604096638';
-const ENQUIRY_EMAIL = 'pradeep.shinde2644@gmail.com';
+const WHATSAPP_NUMBER = '917499140133';
 const WA_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>';
 
 function openWhatsApp(productName) {
   const text = productName
-    ? `Hello Load Bank Providers,\n\nI am interested in *${productName}*.\n\nPlease share quotation, specifications, and delivery details.\n\nThank you.`
-    : `Hello Load Bank Providers,\n\nI would like to enquire about your Load Power Solutions and load bank products.\n\nPlease share details and quotation.\n\nThank you.`;
+    ? `Hello Empire Automation,\n\nI am interested in *${productName}*.\n\nPlease share quotation, specifications, and delivery details.\n\nThank you.`
+    : `Hello Empire Automation,\n\nI would like to enquire about your Load Power Solutions and load bank products.\n\nPlease share details and quotation.\n\nThank you.`;
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
   window.open(url, '_blank', 'noopener,noreferrer');
 }
 
-function openWhatsAppFromForm() {
-  const name = document.getElementById('name')?.value.trim();
-  const mobile = document.getElementById('mobile')?.value.trim();
-  const requirement = document.getElementById('requirement')?.value.trim();
-  let text = 'Hello Load Bank Providers,\n\nI would like to make an enquiry.';
+function sendEnquiryViaWhatsApp(e) {
+  e.preventDefault();
+  const form = e.target;
+  const name = form.querySelector('[name="name"]')?.value.trim() || '';
+  const mobile = form.querySelector('[name="mobile"]')?.value.trim() || '';
+  const email = form.querySelector('[name="email"]')?.value.trim() || '';
+  const requirement = form.querySelector('[name="requirement"]')?.value.trim() || '';
+  const product = document.getElementById('modalProduct')?.textContent.trim() || '';
+
+  let text = 'Hello Empire Automation,\n\nI would like to make an enquiry.';
+  if (product && form.closest('#enquiryModal')) text += `\n\nProduct: *${product}*`;
   if (name) text += `\n\nName: ${name}`;
   if (mobile) text += `\nPhone: ${mobile}`;
+  if (email) text += `\nEmail: ${email}`;
   if (requirement) text += `\n\nRequirement:\n${requirement}`;
   text += '\n\nThank you.';
+
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
+
+  if (form.closest('#enquiryModal')) closeEnquiry();
+  form.reset();
+  if (form.closest('#enquiryModal')) document.getElementById('modalProduct').textContent = '';
 }
 
 function initProductWhatsApp() {
@@ -128,65 +137,6 @@ function closeEnquiry() {
   document.body.style.overflow = '';
 }
 
-function showToast(message, isError = false) {
-  const toast = document.getElementById('toast');
-  toast.textContent = message;
-  toast.classList.toggle('toast-error', isError);
-  toast.classList.add('show');
-  setTimeout(() => {
-    toast.classList.remove('show', 'toast-error');
-    toast.textContent = 'Your enquiry has been submitted successfully.';
-  }, isError ? 6000 : 4000);
-}
-
-async function submitEnquiry(e) {
-  e.preventDefault();
-  const form = e.target;
-  const submitBtn = form.querySelector('button[type="submit"]');
-  const originalText = submitBtn?.textContent || 'Submit Enquiry';
-
-  const formData = new FormData(form);
-  formData.append('_subject', 'New Enquiry - Load Bank Providers');
-  formData.append('_captcha', 'false');
-  formData.append('_template', 'table');
-  if (formData.get('email')) {
-    formData.append('_replyto', formData.get('email'));
-  }
-
-  const product = document.getElementById('modalProduct')?.textContent.trim();
-  if (product) {
-    formData.append('product', product);
-  }
-
-  if (submitBtn) {
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
-  }
-
-  try {
-    const response = await fetch(`https://formsubmit.co/ajax/${ENQUIRY_EMAIL}`, {
-      method: 'POST',
-      body: formData,
-      headers: { Accept: 'application/json' }
-    });
-
-    if (!response.ok) throw new Error('Submit failed');
-
-    const isModal = form.closest('#enquiryModal');
-    if (isModal) closeEnquiry();
-    form.reset();
-    if (isModal) document.getElementById('modalProduct').textContent = '';
-    showToast('Your enquiry has been submitted. We will contact you soon.');
-  } catch {
-    showToast('Unable to send enquiry. Please try WhatsApp or call us directly.', true);
-  } finally {
-    if (submitBtn) {
-      submitBtn.disabled = false;
-      submitBtn.textContent = originalText;
-    }
-  }
-}
-
 document.getElementById('enquiryModal').addEventListener('click', e => {
   if (e.target.id === 'enquiryModal') closeEnquiry();
 });
@@ -209,6 +159,13 @@ const mainNav = document.getElementById('mainNav');
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('open');
   mainNav.classList.toggle('open');
+});
+
+mainNav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mainNav.classList.remove('open');
+  });
 });
 
 window.addEventListener('scroll', () => {
